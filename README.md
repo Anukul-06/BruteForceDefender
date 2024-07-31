@@ -37,7 +37,7 @@ BruteForceDefender is a method or process for blocking the IP addresses of attac
   ```
   or
   ```sh
-  $ hydra <metasploit_ip> http-form-post "/dvwa/login.php: username-^USER&password-^PASS^&Login-submit:Login failed" -L username.txt -P pssword.txt
+  $ hydra <ip> http-form-post "/dvwa/login.php: username-^USER&password-^PASS^&Login-submit:Login failed" -L username.txt -P pssword.txt
   ```
 
   **After the brute force attack is done**
@@ -60,4 +60,8 @@ BruteForceDefender is a method or process for blocking the IP addresses of attac
   ```sh
   $ iptables -A INPUT -s <attacker ip> -j DROP
   ```
+
+**Since this is used for testing purpose you can you the metasploit framework**
+
+This is how we can detect and block the IP address of an attacker attempting to gain admin access through a brute force attack
   
