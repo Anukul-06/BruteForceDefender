@@ -40,4 +40,6 @@ BruteForceDefender is a method or process for blocking the IP addresses of attac
   $ hydra <metasploit_ip> http-form-post "/dvwa/login.php: username-^USER&password-^PASS^&Login-submit:Login failed" -L username.txt -P pssword.txt
   ```
 
+  **Now open Wireshark to capture and analyze the traffic on the login page.**
 
+  **
