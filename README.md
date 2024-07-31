@@ -32,9 +32,12 @@ BruteForceDefender is a method or process for blocking the IP addresses of attac
   hydra tool.
   You can use following command to perform a brute force attack on a login page
   
-  $ hydra -L usernames.txt -P passwords.txt ssh://target_ip 
+  ```sh
+  $ hydra -L usernames.txt -P passwords.txt ssh://target_ip
+  ```
   or
+  ```sh
   $ hydra <metasploit_ip> http-form-post "/dvwa/login.php: username-^USER&password-^PASS^&Login-submit:Login failed" -L username.txt -P pssword.txt
- 
+  ```
 
 
