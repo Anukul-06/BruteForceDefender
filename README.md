@@ -40,6 +40,24 @@ BruteForceDefender is a method or process for blocking the IP addresses of attac
   $ hydra <metasploit_ip> http-form-post "/dvwa/login.php: username-^USER&password-^PASS^&Login-submit:Login failed" -L username.txt -P pssword.txt
   ```
 
-  **Now open Wireshark to capture and analyze the traffic on the login page.**
+  **After the brute force attack is done**
+  
+  Now open Wireshark to capture and analyze the traffic on the login page.
 
-  **
+  You will see a significant amount of traffic coming from a single network, indicating that someone is using this IP address to perform a brute force attack on our website.
+
+  In the next part we will be using iptable rules to filter some of firewall rules  to block 
+  the ip address of the attacker.
+
+  To block the attacker ip address we can use the following command
+
+  ```sh
+  $ iptables -A INPUT -s <attacker ip> -j DROP
+  ```
+
+  Simillarly to unblock the ip address we can use the following command
+
+  ```sh
+  $ iptables -A INPUT -s <attacker ip> -j DROP
+  ```
+  
